@@ -16,7 +16,7 @@
 
 plugins {
   id("com.adarshr.test-logger") version "4.0.0"
-  id("org.jetbrains.kotlin.jvm") version "2.2.0"
+  id("org.jetbrains.kotlin.jvm") version "2.4.20"
   `maven-publish`
 }
 
@@ -32,22 +32,18 @@ dependencies {
   implementation("com.google.errorprone:error_prone_annotations:2.41.0")
   implementation("com.google.protobuf:protobuf-javalite:4.28.3")
   implementation("com.google.protobuf:protobuf-kotlin-lite:4.28.3")
-  implementation("org.bouncycastle:bcpkix-jdk18on:1.78.1")
-  implementation("org.jetbrains.kotlin:kotlin-stdlib:2.2.0")
+  implementation("org.bouncycastle:bcpkix-jdk18on:1.84")
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.10.2")
   implementation("com.google.guava:guava:33.5.0-jre")
-
   testImplementation(kotlin("test"))
   testImplementation("com.google.testparameterinjector:test-parameter-injector:1.18")
   testImplementation("com.google.truth:truth:1.4.4")
-
-  // Required to run JUnit 4 tests.
   testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
 }
 
 java {
-  toolchain { languageVersion = JavaLanguageVersion.of(21) }
+  toolchain { languageVersion = JavaLanguageVersion.of(25) }
   withSourcesJar()
 }
 
